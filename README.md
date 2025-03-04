@@ -16,7 +16,7 @@ A React-based Scientific Calculator for performing basic and advanced mathematic
 
 ## Future Enhancements 🚀 *(Coming Soon)*  
 
-- 🌙 Dark mode support  
+- 🌙 Dark mode support  (Completed)✅ 
 - ➕ Additional scientific functions (*factorial, square root, etc.*)  
 - ⌨️ Keyboard input support  
 
