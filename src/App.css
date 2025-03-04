@@ -8,13 +8,13 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  background-color: rgb(255, 0, 25);
+  background-color: rgb(255, 145, 0);
 }
 
 h1 {
   font-size: 3rem;
   font-weight: bold;
-  color: #d0ff00;
+  color: #00fbff;
   position: relative;
   display: inline-block;
   cursor: pointer;

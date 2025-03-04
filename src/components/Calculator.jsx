@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Calc.css";
 
 const Calculator = () => {
   const [activeTab, setActiveTab] = useState("default");
   const [value, setValue] = useState("");
+  const [theme, setTheme] = useState("dark");
   const calculateResult = () => {
     try {
       let expression = value
@@ -14,7 +15,17 @@ const Calculator = () => {
         .replace(/tan\(/g, "Math.tan(")
         .replace(/log\(/g, "Math.log10(")
         .replace(/ln\(/g, "Math.log(")
-        .replace(/\^/g, "**");
+        .replace(/(\d+)!/g, (match, num) => factorial(parseInt(num)))
+        .replace(/√(\d+(\.\d+)?)/g, (match, num) => `Math.sqrt(${num})`)
+        .replace(/\|(-?\d+(\.\d+)?)\|/g, (match, num) => `Math.abs(${num})`)
+        .replace(
+          /2\s*\^\s*\(([^)]+)\)/g,
+          (match, exponent) => `Math.pow(2, ${exponent})`
+        )
+        .replace(
+          /(\d+)\s*\^\s*(\d+)/g,
+          (match, base, exponent) => `Math.pow(${base}, ${exponent})`
+        );
 
       let result = eval(expression);
       setValue(
@@ -26,17 +37,110 @@ const Calculator = () => {
       setValue("Error");
     }
   };
+  useEffect(() => {
+    window.onload = function () {
+      theme_change("light");
+    };
+  }, []);
 
   const toggleSign = () => {
     if (value) {
       setValue((parseFloat(value) * -1).toString());
     }
   };
+  const handleKeyPress = (event) => {
+    const key = event.key;
+
+    if (/[0-9]/.test(key)) {
+      setValue(value + key);
+    } else if (key === "Enter") {
+      calculateResult();
+    } else if (key === "Backspace") {
+      setValue(value.slice(0, -1));
+    } else if (["+", "-", "*", "/", "^"].includes(key)) {
+      setValue(value + key);
+    } else if (key === "Escape") {
+      setValue("");
+    }
+  };
+
+  const factorial = (value) => {
+    let ans = 1;
+    if (value < 0) {
+      return "Error";
+    }
+    if (value == 0) {
+      return 0;
+    } else {
+      for (let index = 1; index <= value; index++) {
+        ans = ans * index;
+      }
+      return ans;
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyPress);
+    return () => window.removeEventListener("keydown", handleKeyPress);
+  }, [value]);
+
+  function theme_change(value) {
+    if (value === "light") {
+      document.body.style.backgroundColor = "black";
+      document.body.style.color = "white";
+      document.body.style.boxShadow = "0px 0px 20px rgba(255, 255, 255, 0.5)";
+      document.body.style.transition = "all 0.5s ease-in-out";
+      let calElement = document.getElementsByClassName("cal")[0];
+      if (calElement) {
+        calElement.style.color = "blue";
+        calElement.style.backgroundColor = "blue";
+      }
+      let backelement = document.getElementsByClassName("digits")[0];
+      if (backelement) {
+        backelement.style.backgroundColor = "rgba(240, 86, 39, 0.81)";
+      }
+    } else {
+      document.body.style.backgroundColor = "white";
+      document.body.style.color = "black";
+      document.body.style.boxShadow = "none";
+      document.body.style.transition = "all 0.5s ease-in-out";
+      let calElement = document.getElementsByClassName("cal")[0];
+      if (calElement) {
+        calElement.style.color = "red";
+        calElement.style.backgroundColor = "yellowgreen";
+      }
+      let backelement = document.getElementsByClassName("digits")[0];
+      if (backelement) {
+        backelement.style.backgroundColor = "lightblue";
+      }
+    }
+  }
+
   const renderContent = () => {
     switch (activeTab) {
       case "scientic":
         return (
           <div className="scien">
+            <div className="col1">
+              <button className="btn" onClick={() => setValue(value + "^")}>
+                xʸ
+              </button>
+              <button
+                className="btn"
+                onClick={() => setValue(`2 ^ (${value})`)}
+              >
+                2ˣ
+              </button>
+              <button className="btn" onClick={() => setValue(value + "!")}>
+                x!
+              </button>
+              <button className="btn" onClick={() => setValue("√" + value)}>
+                √
+              </button>
+
+              <button className="btn" onClick={() => setValue(`|${value}|`)}>
+                |x|
+              </button>
+            </div>
             <div className="col1">
               <button className="btn" onClick={() => setValue(value + "(")}>
                 (
@@ -81,25 +185,41 @@ const Calculator = () => {
   };
   return (
     <div className="cal">
+      <button
+        className={`theme-button ${
+          theme === "dark" ? "dark-mode" : "light-mode"
+        }`}
+        onClick={() => {
+          setTheme(theme === "dark" ? "light" : "dark");
+          theme_change(theme);
+        }}
+      >
+        {theme === "dark" ? (
+          <>
+            <i className="fa-solid fa-sun"></i>
+            <p>Dark</p>
+          </>
+        ) : (
+          <>
+            <i className="fa-solid fa-moon"></i>
+            <p>Light</p>
+          </>
+        )}
+      </button>
+
       <div className="input-box">
         <input type="text" value={value} readOnly />
       </div>
       <button
-        className="expand-btn"
-        style={{
-          top: activeTab === "scientic" ? "46.5%" : "46.5%",
-          left: activeTab === "scientic" ? "62%" : "57%",
-        }}
+        className={`expand-btn ${
+          activeTab === "scientic" ? "expand-active" : ""
+        }`}
         onClick={() => setActiveTab("scientic")}
       >
         Expand
       </button>
       <button
-        className="col-btn"
-        style={{
-          top: activeTab === "scientic" ? "39.5%" : "39.5%",
-          left: activeTab === "scientic" ? "58.5%" : "53.5%",
-        }}
+        className={`col-btn ${activeTab === "scientic" ? "col-active" : ""}`}
         onClick={() => setActiveTab("default")}
       >
         Collapse
