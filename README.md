@@ -1,25 +1,31 @@
-# Scientific Calculator  
-A React-based Scientific Calculator for performing basic and advanced mathematical operations.  
+Scientific Calculator
+A React-based Scientific Calculator capable of performing a wide range of mathematical operations, from basic arithmetic to advanced scientific functions.
 
-## Features ✅  
+Features ✅
+Basic Arithmetic:
 
-✔️ **Basic Arithmetic:** Addition, Subtraction, Multiplication, Division  
-✔️ **Scientific Functions:** Trigonometry (*sin, cos, tan*), Logarithms (*log, ln*), Exponents (*π, e, ^*)  
-✔️ **Input Handling:** Parentheses support and sign toggle (*+/-*)  
-✔️ **Dynamic UI:** Expandable scientific function panel  
-✔️ **Error Handling:** Displays `"Error"` for invalid expressions  
+Addition (+)
+Subtraction (-)
+Multiplication (×)
+Division (÷)
+Scientific Functions:
 
-## Technologies Used 🛠️  
+Trigonometry: sin(x), cos(x), tan(x) (Supports degrees & radians)
+Logarithms: log(x) (Base 10), ln(x) (Natural log)
+Exponents & Powers: π, e, xⁿ (Power function), 2ⁿ
+Factorial: x! (Factorial function)
+Square Root: √x
+Absolute Value: |x|
+Additional Features:
 
-- **React:** For UI development  
-- **CSS:** For styling  
-
-## Future Enhancements 🚀 *(Coming Soon)*  
-
-- 🌙 Dark mode support  (Completed)✅ 
-- ➕ Additional scientific functions (*factorial, square root, etc.*)  
-- ⌨️ Keyboard input support  
-
-## Author ✍️  
-
-Developed by **Arpit Gupta**  
+Parentheses Support: Solve complex expressions with brackets ().
+Sign Toggle: Convert between positive and negative values +/-.
+Dynamic UI: Expandable panel for advanced functions.
+Error Handling: Displays "Error" for invalid expressions.
+🌙 Dark Mode Support (Completed)
+⌨️ Keyboard Input Support (Completed)
+Technologies Used 🛠️
+React → UI Development
+CSS → Styling & Animations
+Author ✍️
+Developed by Arpit Gupta
