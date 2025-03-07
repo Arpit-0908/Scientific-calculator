@@ -1,8 +1,6 @@
 # 🌟 **Scientific Calculator** 🌟  
 A **React-based Scientific Calculator** capable of performing a wide range of mathematical operations, from **basic arithmetic** to **advanced scientific functions**.  
 
----
-
 ## ✅ **Features**  
 
 ### 🔢 **Basic Arithmetic**  
@@ -12,8 +10,6 @@ A **React-based Scientific Calculator** capable of performing a wide range of ma
 ➗ **Division (÷)**  
 🟰 **Modulus (%)** _(Remainder Calculation)_  
 
----
-
 ## 🧠 **Scientific Functions**  
 📌 **Trigonometry**: `sin(x)`, `cos(x)`, `tan(x)` _(Supports degrees & radians)_  
 📌 **Logarithms**: `log(x)` _(Base 10)_, `ln(x)` _(Natural log)_  
@@ -22,7 +18,6 @@ A **React-based Scientific Calculator** capable of performing a wide range of ma
 📌 **Square Root**: `√x`  
 📌 **Absolute Value**: `|x|`  
 
----
 
 ## ⚡ **Additional Features**  
 ✅ **Parentheses Support**: Solve complex expressions with brackets `()`.  
@@ -30,19 +25,14 @@ A **React-based Scientific Calculator** capable of performing a wide range of ma
 ✅ **Dynamic UI**: Expandable panel for advanced functions.  
 ✅ **Error Handling**: Displays `"Error"` for invalid expressions.  
 
----
 
 ## 🎯 **Completed Features**  
 🌙 **Dark Mode Support**  
 ⌨ **Keyboard Input Support**  
 
----
-
 ## 🛠 **Technologies Used**  
 🖥 **React** → UI Development  
 🎨 **CSS** → **Styling & Animations**  
-
----
 
 ## ✍️ **Author**  
 Developed by **Arpit Gupta**  
