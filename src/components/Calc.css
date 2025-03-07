@@ -10,6 +10,7 @@ body {
 
 h1 {
     color: #fff;
+    margin-top: 10px;
 }
 
 h1::after {
@@ -213,13 +214,13 @@ h1:hover::after {
 }
 
 .col-active {
-    top: -40px;
+    top: -47px;
     right: 10px;
 }
 
 .expand-active {
     top: 40px;
-    right: -9.5%;    
+    right: -10%;  
 }
 
 .col-btn:hover {
