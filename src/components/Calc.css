@@ -1,5 +1,7 @@
 body {
     background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100vh;
 }
 
 #root {
@@ -35,7 +37,12 @@ h1:hover::after {
     align-items: center;
     flex-direction: column;
     padding: 20px;
+    margin-top: 20px;
     border: 4px solid aquamarine;
+    position: relative;
+    z-index: 10;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .input-box {
@@ -50,9 +57,12 @@ h1:hover::after {
 
 .input-box input {
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     box-sizing: border-box;
-    font-size: 30px;
+    font-size: 20px;
     background-color: black;
     color: white;
     padding-left: 15px;
@@ -160,8 +170,8 @@ h1:hover::after {
 
 .expand-btn {
     position: absolute;
-    top: 46.5%;
-    left: 59.5%;
+    top: 40px;
+    right: -16.5%;
     transform: rotateZ(90deg);
     border-bottom-right-radius: 0;
     border-top-left-radius: 20px;
@@ -169,24 +179,25 @@ h1:hover::after {
     border-bottom-left-radius: 0;
     color: white;
     background-color: black;
-    border: none;
+    border: 2px solid White;
     cursor: pointer;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
     transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .expand-btn:hover {
-    background-color: rgb(21, 219, 38);
-    transform: rotateZ(90deg) translateY(-5px);
+    background-color: rgb(219, 21, 21);
+    transform: rotateZ(90deg) translateY(-2px);
 }
 
 .col-btn {
     position: absolute;
-    top: 36%;
-    left: 55%;
+    top: -47px;
+    right: 10px;
     border-bottom-right-radius: 0;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -194,24 +205,25 @@ h1:hover::after {
     background-color: black;
     color: white;
     padding: 10px 15px;
-    border: none;
+    border: 2px solid White;
     cursor: pointer;
+    z-index: 1;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 .col-active {
-    top: 36%;
-    left: 64%;
+    top: -40px;
+    right: 10px;
 }
 
 .expand-active {
-    top: 46.5%;
-    left: 68.5%;
+    top: 40px;
+    right: -9.5%;    
 }
 
 .col-btn:hover {
-    transform: translateY(-5px);
+    transform: translateY(-2px);
     background-color: rgb(255, 47, 47);
 }
 
@@ -248,8 +260,8 @@ h1:hover::after {
 
 .dark-mode {
     background-color: rgb(5, 1, 1);
-    top: 10px;
-    right: 10px;
+    top: -33%;
+    right: -33%;
     color: #000;
     border: 2px solid white;
 }
@@ -263,8 +275,8 @@ h1:hover::after {
 
 .light-mode {
     background-color: rgb(255, 255, 255);
-    top: 10px;
-    left: 10px;
+    top: -33%;
+    left: -33%;
     color: #000;
     border: 2px #000000 solid;
 }

@@ -1,8 +1,9 @@
 #root {
   max-width: 1980px;
   margin: 0 auto;
-  padding: 2rem;
-  width: 5auto;
+  padding: 1.5rem;
+  width:  auto;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;

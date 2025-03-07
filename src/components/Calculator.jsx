@@ -94,7 +94,7 @@ const Calculator = () => {
       if (calElement) {
         calElement.style.color = "blue";
         calElement.style.backgroundColor = "blue";
-        calElement.style.borderColor="white";
+        calElement.style.borderColor = "white";
       }
 
       let backelement = document.getElementsByClassName("digits")[0];
@@ -141,7 +141,7 @@ const Calculator = () => {
       if (calElement) {
         calElement.style.color = "red";
         calElement.style.backgroundColor = "rgb(71, 201, 38)";
-        calElement.style.borderColor="black";
+        calElement.style.borderColor = "black";
       }
 
       let backelement = document.getElementsByClassName("digits")[0];
@@ -275,7 +275,12 @@ const Calculator = () => {
       </button>
 
       <div className="input-box">
-        <input type="text" value={value} readOnly />
+        <input
+          type="text"
+          value={value || ""}
+          readOnly
+          placeholder="Perform Operations..."
+        />
       </div>
       <button
         className={`expand-btn ${
