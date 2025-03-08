@@ -1,0 +1,69 @@
+.trig-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.button-group button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.button-group button:hover {
+    background-color: #0056b3;
+}
+
+.trig-info {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.trig-info h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.trig-info p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.trig-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.trig-info li {
+    font-size: 14px;
+    background: #e9ecef;
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: 3px;
+}

@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <h1>Scientific Calculator</h1>
+      
       <Calculator/>
     </>
   );
