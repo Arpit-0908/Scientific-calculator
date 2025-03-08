@@ -10,6 +10,10 @@ const Calculator = () => {
   const [theme, setTheme] = useState("dark");
   const [history, setHistory] = useState(["No History Available"]);
 
+  const clearHistory = () => {
+    setHistory(["No History Available"]);
+  };
+
   const calculateResult = () => {
     try {
       let expression = value
@@ -38,7 +42,11 @@ const Calculator = () => {
         : parseFloat(result.toFixed(6)).toString();
 
       setValue(formattedResult);
-      setHistory([...history, `${value} = ${formattedResult}`]);
+      setHistory((prevHistory) =>
+        prevHistory[0] === "No History Available"
+          ? [`${value} = ${formattedResult}`]
+          : [...prevHistory, `${value} = ${formattedResult}`]
+      );
     } catch (error) {
       setValue("Error");
     }
@@ -101,33 +109,37 @@ const Calculator = () => {
           <ul>
             <li className="nav">Home</li>
             <li className="nav ">About</li>
-            <li className="nav"  onClick={() => setActiveTab("default")}>Basic Calc</li>
-            <li className="nav" onClick={() => setActiveTab("scientic")}>Scientific Calc</li>
+            <li className="nav" onClick={() => setActiveTab("default")}>
+              Basic Calc
+            </li>
+            <li className="nav" onClick={() => setActiveTab("scientic")}>
+              Scientific Calc
+            </li>
           </ul>
         </div>
       </div>
       <div className="cal">
-      <button
-              className={`theme-button ${
-                theme === "dark" ? "dark-mode" : "light-mode"
-              }`}
-              onClick={() => {
-                setTheme(theme === "dark" ? "light" : "dark");
-                theme_change(theme);
-              }}
-            >
-              {theme === "dark" ? (
-                <>
-                  <i className="fa-solid fa-sun"></i>
-                  <p>Dark</p>
-                </>
-              ) : (
-                <>
-                  <i className="fa-solid fa-moon"></i>
-                  <p>Light</p>
-                </>
-              )}
-            </button>
+        <button
+          className={`theme-button ${
+            theme === "dark" ? "dark-mode" : "light-mode"
+          }`}
+          onClick={() => {
+            setTheme(theme === "dark" ? "light" : "dark");
+            theme_change(theme);
+          }}
+        >
+          {theme === "dark" ? (
+            <>
+              <i className="fa-solid fa-sun"></i>
+              <p>Dark</p>
+            </>
+          ) : (
+            <>
+              <i className="fa-solid fa-moon"></i>
+              <p>Light</p>
+            </>
+          )}
+        </button>
         <div className="left-area">
           <div className="content">
             <h2>Scientific Calculator</h2>
@@ -141,7 +153,6 @@ const Calculator = () => {
             </p>
           </div>
           <div className="display">
-           
             <h1 className="displayh1">Calculator</h1>
             <div className="input-box">
               <input
@@ -260,7 +271,7 @@ const Calculator = () => {
           </div>
         </div>
         <div className="right-area">
-        <div className="trigno-fxn">
+          <div className="trigno-fxn">
             <TrignoValues />
           </div>
           <div className="history">
@@ -270,9 +281,8 @@ const Calculator = () => {
                 <li key={index}>{entry}</li>
               ))}
             </ul>
-            <button onClick={() => setHistory([])}>Clear History</button>
+            <button onClick={clearHistory}>Clear History</button>
           </div>
-          
         </div>
       </div>
       <div className="footer">
