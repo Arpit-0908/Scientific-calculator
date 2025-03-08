@@ -95,4 +95,7 @@ export function theme_change(value) {
   setStyle(document.querySelector(".header"), {
     backgroundColor: isLight ? "#003366" : "#00509E",
   });
+  setStyle(document.querySelector(".trig-info"), {
+    color: isLight ? "red" : "blue",
+    });
 }

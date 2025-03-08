@@ -100,8 +100,9 @@ const Calculator = () => {
         <div className="tabs">
           <ul>
             <li className="nav">Home</li>
-            <li className="nav">About Me</li>
-            <li className="nav">Scientific</li>
+            <li className="nav ">About</li>
+            <li className="nav"  onClick={() => setActiveTab("default")}>Basic Calc</li>
+            <li className="nav" onClick={() => setActiveTab("scientic")}>Scientific Calc</li>
           </ul>
         </div>
       </div>
@@ -259,6 +260,9 @@ const Calculator = () => {
           </div>
         </div>
         <div className="right-area">
+        <div className="trigno-fxn">
+            <TrignoValues />
+          </div>
           <div className="history">
             <h3>History</h3>
             <ul>
@@ -268,9 +272,7 @@ const Calculator = () => {
             </ul>
             <button onClick={() => setHistory([])}>Clear History</button>
           </div>
-          <div className="trigno-fxn">
-            <TrignoValues />
-          </div>
+          
         </div>
       </div>
       <div className="footer">

@@ -1,17 +1,20 @@
 .trig-container {
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #f8f9fa;
+    width: 350px;
+    padding-top: 10px;
+    height: auto;
+    background: #66ff00;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 20px 10px 18px rgba(0, 0, 0, 0.1);
     text-align: center;
-    scale: .8;
+    scale: .7;
+    margin-top: -50px;
+    z-index: 0;
 }
 
 h2 {
     font-size: 24px;
-    color: #333;
+    color: rgb(255, 136, 0);
+    text-decoration: underline;
     margin-bottom: 15px;
 }
 
@@ -39,32 +42,42 @@ h2 {
 
 .trig-info {
     background: white;
-    padding: 15px;
+    padding: 5px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .trig-info h3 {
-    font-size: 20px;
+    font-size: 22px;
     color: #333;
-    margin-bottom: 10px;
-}
-
-.trig-info p {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .trig-info ul {
     list-style-type: none;
     padding: 0;
+    width: 80%;
 }
 
 .trig-info li {
-    font-size: 14px;
-    background: #e9ecef;
+    font-size: 18px;
+    background: #ff0000;
+    color: #333;
+    font-weight: 500;
     padding: 5px;
     margin: 5px 0;
+    letter-spacing: 1.1px;
     border-radius: 3px;
+}
+
+.trig-info li:nth-child(odd) {
+    background-color: #ccc;
+}
+
+.trig-info li:nth-child(even) {
+    background-color: white;
 }
