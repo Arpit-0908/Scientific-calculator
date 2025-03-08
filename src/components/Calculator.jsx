@@ -99,9 +99,9 @@ const Calculator = () => {
         <h1>Online Calculator</h1>
         <div className="tabs">
           <ul>
-            <li>Home</li>
-            <li>About Me</li>
-            <li>Scientific</li>
+            <li className="nav">Home</li>
+            <li className="nav">About Me</li>
+            <li className="nav">Scientific</li>
           </ul>
         </div>
       </div>
@@ -141,7 +141,7 @@ const Calculator = () => {
           </div>
           <div className="display">
            
-            <h1>Calculator</h1>
+            <h1 className="displayh1">Calculator</h1>
             <div className="input-box">
               <input
                 type="text"
