@@ -104,10 +104,13 @@ const About = () => {
           <div className="about-text">
             <h2>About Me</h2>
             <p>
-              Hi, I'm <strong>Arpit Gupta</strong>, a passionate web developer
-              with experience in front-end and back-end development. I love
-              building efficient and scalable applications with clean, modern
-              design.
+              "Hi, I'm <strong>Arpit Gupta</strong>, a passionate web developer
+              with a keen focus on front-end technologies. I love building
+              efficient, responsive applications with modern, clean designs.
+              With a strong foundation in <strong>HTML</strong>,{" "}
+              <strong>CSS</strong>, and currently enhancing my skills in{" "}
+              <strong>JavaScript & React</strong>, I’m excited to create
+              seamless user experiences."
             </p>
             <div className="links">
               <a
