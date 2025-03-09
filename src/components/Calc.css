@@ -82,7 +82,7 @@ body {
 
 .left-area,
 .right-area {
-    width: 70%;
+    width: 75%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -95,7 +95,7 @@ body {
 
 .right-area {
     background-color: #000;
-    width: 30%;
+    width: 25%;
     padding: 0;
     margin-right: 60px;
 }
@@ -110,7 +110,8 @@ body {
     margin-top: -80px;
     padding-top: 30px;
     position: relative;
-    scale: 0.65;
+    scale: 0.7;
+    margin-left: -50px;
 
 }
 
@@ -366,6 +367,13 @@ body {
     margin-top: 15px;
     padding: 0;
 }
+.main-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+
+}
 
 .content {
     font-size: 20px;
@@ -400,77 +408,102 @@ body {
 }
 
 .history {
-    width: 75%;
-    height: 350px;
-    padding: 5px;
-    background: #00ee18;
-    border-radius: 8px;
+    width: 380px;
+    height: 450px;
+    background: #f9f9f9;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
     overflow-y: hidden;
-    margin: 0;
-    margin-top: -80px;
+    margin: 0 auto;
     position: relative;
     display: grid;
-    grid-template-rows: 1fr 3fr 1fr;
-    /* Equal space distribution */
+    grid-template-rows: auto 1fr auto;
     align-items: center;
-    justify-items: center;
-    padding-top: 0;
-    scale: 0.75;
+    text-align: center;
+    padding: 10px;
+    margin-top: -80px;
+    margin-left: 0px;
+    scale: 0.85;
+}
+.history-active{
+    margin-left: -70px;
+    width: 370px;
 }
 
-/* H3 takes first column */
-.history h3 {
+/* Title */
+.history-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.history-title h3 {
     font-size: 22px;
     color: #333;
     border-bottom: 2px solid #007bff;
-    width: 100%;
-    padding-bottom: 10px;
-    text-align: center;
-    background-color: red;
+    width: fit-content;
 }
 
-/* UL takes second column */
-.history ul {
+/* List */
+.history-list {
+    background: white;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: 90%;
+    margin: 0 auto;
+    overflow-y: auto;
+}
+
+.history-list ul {
     list-style: none;
     padding: 0;
-    margin: 10px 0;
-    max-height: 170px;
-    overflow-y: auto;
-    background: white;
-    border-radius: 5px;
-    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    margin: 0;
 }
 
-/* List items inside UL */
-.history li {
+.history-list li {
     font-size: 14px;
-    padding: 8px;
-    margin: 5px;
     background: #e9ecef;
-    border-radius: 4px;
-    color: #333;
-}
-
-/* Button in third column */
-.history button {
-    padding: 8px 15px;
-    font-size: 18px;
-    background: #dc3545;
-    color: white;
-    width: 50%;
-    border: none;
     border-radius: 5px;
-    cursor: pointer;
+    color: #333;
+    padding: 8px;
+    margin-bottom: 8px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     transition: background 0.3s ease;
 }
 
-.history button:hover {
-    background: #c82333;
+.history-list li:hover {
+    background: #d6d6d6;
 }
 
+/* Button */
+.history-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    /* Added gap between button and list */
+}
+
+.history-button button {
+    font-size: 14px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 90%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.history-button button:hover {
+    background: #c82333;
+    transform: scale(1.05);
+}
 
 .footer {
     background: linear-gradient(135deg, #2c3e50, #34495e);

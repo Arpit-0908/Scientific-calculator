@@ -152,120 +152,144 @@ const Calculator = () => {
               calculations.
             </p>
           </div>
-          <div className="display">
-            <h1 className="displayh1">Calculator</h1>
-            <div className="input-box">
-              <input
-                type="text"
-                value={value || ""}
-                className="input-area"
-                readOnly
-                placeholder="Perform Operations..."
-              />
+          <div className="main-section">
+            <div className="display">
+              <h1 className="displayh1">Calculator</h1>
+              <div className="input-box">
+                <input
+                  type="text"
+                  value={value || ""}
+                  className="input-area"
+                  readOnly
+                  placeholder="Perform Operations..."
+                />
+              </div>
+              <button
+                className={`expand-btn ${
+                  activeTab === "scientic" ? "expand-active" : ""
+                }`}
+                onClick={() => setActiveTab("scientic")}
+              >
+                Expand
+              </button>
+              <button
+                className={`col-btn ${
+                  activeTab === "scientic" ? "col-active" : ""
+                }`}
+                onClick={() => setActiveTab("default")}
+              >
+                Collapse
+              </button>
+              <div className="digits">
+                <div className="col1">{renderContent()}</div>
+                <div className="col1">
+                  <button
+                    className="btn-clear"
+                    onClick={() => setValue(value.slice(0, -1))}
+                  >
+                    Del
+                  </button>
+                  <button className="btn" onClick={() => setValue(value + "7")}>
+                    7
+                  </button>
+                  <button className="btn" onClick={() => setValue(value + "4")}>
+                    4
+                  </button>
+                  <button className="btn" onClick={() => setValue(value + "1")}>
+                    1
+                  </button>
+                  <button
+                    className="btn"
+                    onClick={() => setValue(value + "00")}
+                  >
+                    00
+                  </button>
+                </div>
+                <div className="col2">
+                  <button className="btn-clear" onClick={() => setValue("")}>
+                    AC
+                  </button>
+                  <button className="btn" onClick={() => setValue(value + "8")}>
+                    8
+                  </button>
+                  <button className="btn" onClick={() => setValue(value + "5")}>
+                    5
+                  </button>
+                  <button className="btn" onClick={() => setValue(value + "2")}>
+                    2
+                  </button>
+                  <button className="btn" onClick={() => setValue(value + "0")}>
+                    0
+                  </button>
+                </div>
+                <div className="col3">
+                  <button className="btn" onClick={() => setValue(value + ".")}>
+                    .
+                  </button>
+                  <button className="btn" onClick={() => setValue(value + "9")}>
+                    9
+                  </button>
+                  <button className="btn" onClick={() => setValue(value + "6")}>
+                    6
+                  </button>
+                  <button className="btn" onClick={() => setValue(value + "3")}>
+                    3
+                  </button>
+                  <button className="btneq" onClick={calculateResult}>
+                    =
+                  </button>
+                </div>
+                <div className="col4">
+                  <button
+                    className="btn-sy"
+                    onClick={() => setValue(value + "%")}
+                  >
+                    %
+                  </button>
+                  <button
+                    className="btn-sy"
+                    onClick={() => setValue(value + "*")}
+                  >
+                    ×
+                  </button>
+                  <button
+                    className="btn-sy"
+                    onClick={() => setValue(value + "-")}
+                  >
+                    -
+                  </button>
+                  <button
+                    className="btn-sy"
+                    onClick={() => setValue(value + "+")}
+                  >
+                    +
+                  </button>
+                  <button
+                    className="btn-sy"
+                    onClick={() => setValue(value + "/")}
+                  >
+                    /
+                  </button>
+                </div>
+              </div>
             </div>
-            <button
-              className={`expand-btn ${
-                activeTab === "scientic" ? "expand-active" : ""
+            <div
+              className={`history ${
+                activeTab === "scientic" ? "history-active" : ""
               }`}
-              onClick={() => setActiveTab("scientic")}
             >
-              Expand
-            </button>
-            <button
-              className={`col-btn ${
-                activeTab === "scientic" ? "col-active" : ""
-              }`}
-              onClick={() => setActiveTab("default")}
-            >
-              Collapse
-            </button>
-            <div className="digits">
-              <div className="col1">{renderContent()}</div>
-              <div className="col1">
-                <button
-                  className="btn-clear"
-                  onClick={() => setValue(value.slice(0, -1))}
-                >
-                  Del
-                </button>
-                <button className="btn" onClick={() => setValue(value + "7")}>
-                  7
-                </button>
-                <button className="btn" onClick={() => setValue(value + "4")}>
-                  4
-                </button>
-                <button className="btn" onClick={() => setValue(value + "1")}>
-                  1
-                </button>
-                <button className="btn" onClick={() => setValue(value + "00")}>
-                  00
-                </button>
+              <div className="history-title">
+                <h3>History</h3>
               </div>
-              <div className="col2">
-                <button className="btn-clear" onClick={() => setValue("")}>
-                  AC
-                </button>
-                <button className="btn" onClick={() => setValue(value + "8")}>
-                  8
-                </button>
-                <button className="btn" onClick={() => setValue(value + "5")}>
-                  5
-                </button>
-                <button className="btn" onClick={() => setValue(value + "2")}>
-                  2
-                </button>
-                <button className="btn" onClick={() => setValue(value + "0")}>
-                  0
-                </button>
+              <div className="history-list">
+                <ul>
+                  {history.map((entry, index) => (
+                    <li key={index}>{entry}</li>
+                  ))}
+                </ul>
               </div>
-              <div className="col3">
-                <button className="btn" onClick={() => setValue(value + ".")}>
-                  .
-                </button>
-                <button className="btn" onClick={() => setValue(value + "9")}>
-                  9
-                </button>
-                <button className="btn" onClick={() => setValue(value + "6")}>
-                  6
-                </button>
-                <button className="btn" onClick={() => setValue(value + "3")}>
-                  3
-                </button>
-                <button className="btneq" onClick={calculateResult}>
-                  =
-                </button>
-              </div>
-              <div className="col4">
-                <button
-                  className="btn-sy"
-                  onClick={() => setValue(value + "%")}
-                >
-                  %
-                </button>
-                <button
-                  className="btn-sy"
-                  onClick={() => setValue(value + "*")}
-                >
-                  ×
-                </button>
-                <button
-                  className="btn-sy"
-                  onClick={() => setValue(value + "-")}
-                >
-                  -
-                </button>
-                <button
-                  className="btn-sy"
-                  onClick={() => setValue(value + "+")}
-                >
-                  +
-                </button>
-                <button
-                  className="btn-sy"
-                  onClick={() => setValue(value + "/")}
-                >
-                  /
-                </button>
+              <div className="history-button">
+                <button onClick={clearHistory}>Clear History</button>
               </div>
             </div>
           </div>
@@ -273,15 +297,6 @@ const Calculator = () => {
         <div className="right-area">
           <div className="trigno-fxn">
             <TrignoValues />
-          </div>
-          <div className="history">
-            <h3>History</h3>
-            <ul>
-              {history.map((entry, index) => (
-                <li key={index}>{entry}</li>
-              ))}
-            </ul>
-            <button onClick={clearHistory}>Clear History</button>
           </div>
         </div>
       </div>
