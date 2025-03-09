@@ -117,10 +117,16 @@ const Calculator = () => {
                 <b>About</b>
               </li>
             </Link>
-            <li className="nav" onClick={() => setActiveTab("default")}>
+            <li
+              className={`nav ${activeTab === "default" ? "disabled" : ""}`}
+              onClick={() => setActiveTab("default")}
+            >
               Basic Calc
             </li>
-            <li className="nav" onClick={() => setActiveTab("scientic")}>
+            <li
+              className={`nav ${activeTab === "scientic" ? "disabled" : ""}`}
+              onClick={() => setActiveTab("scientic")}
+            >
               Scientific Calc
             </li>
           </ul>
