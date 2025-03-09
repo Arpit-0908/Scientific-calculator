@@ -5,11 +5,13 @@ import Scientific from "./Scientific";
 import logo from "/nav.png";
 import TrignoValues from "./Trigno-values";
 import BMICalculator from "./BMI";
+
+import { useTheme } from "../ThemeContext";
 import { Link } from "react-router-dom";
 const Calculator = () => {
   const [activeTab, setActiveTab] = useState("default");
   const [value, setValue] = useState("");
-  const [theme, setTheme] = useState("dark");
+  const { theme, setTheme } = useTheme();
   const [history, setHistory] = useState(["No History Available"]);
 
   const clearHistory = () => {

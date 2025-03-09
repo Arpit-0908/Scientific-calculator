@@ -96,4 +96,9 @@ export function theme_change(value) {
   setStyle(document.querySelector(".trig-info"), {
     color: isLight ? "red" : "blue",
   });
+  [".history", ".history-active"].forEach((cls) =>
+    setStyle(document.querySelector(cls), {
+      backgroundColor: isLight ? "white" : "#ccc",
+    })
+  );
 }

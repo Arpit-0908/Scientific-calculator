@@ -3,10 +3,11 @@ import "./About.css";
 import logo from "/nav.png";
 import myImage from "/Photo.png";
 import { Link } from "react-router-dom";
+import { useTheme } from "../ThemeContext";
 import { theme_change } from "./Theme_functions";
 
 const About = () => {
-  const [theme, setTheme] = useState("dark");
+  const { theme, setTheme } = useTheme();
 
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
@@ -67,7 +68,7 @@ const About = () => {
           }`}
           onClick={toggleTheme}
         >
-          {theme === "dark" ? (
+          {theme === "light" ? (
             <>
               <i className="fa-solid fa-moon"></i>
               <p>Light</p>
