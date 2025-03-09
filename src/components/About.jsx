@@ -67,15 +67,15 @@ const About = () => {
           }`}
           onClick={toggleTheme}
         >
-          {theme === "light" ? (
-            <>
-              <i className="fa-solid fa-sun"></i>
-              <p>Dark</p>
-            </>
-          ) : (
+          {theme === "dark" ? (
             <>
               <i className="fa-solid fa-moon"></i>
               <p>Light</p>
+            </>
+          ) : (
+            <>
+              <i className="fa-solid fa-sun"></i>
+              <p>Dark</p>
             </>
           )}
         </button>
