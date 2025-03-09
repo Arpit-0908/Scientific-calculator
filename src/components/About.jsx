@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./About.css";
 import logo from "/nav.png";
 import myImage from "/Photo.png";
@@ -8,6 +8,11 @@ import { theme_change } from "./Theme_functions";
 
 const About = () => {
   const { theme, setTheme } = useTheme();
+  const setStyle = (element, styles) => {
+    for (const [key, value] of Object.entries(styles)) {
+      element.style[key] = value;
+    }
+  };
 
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
@@ -44,7 +49,9 @@ const About = () => {
       backgroundColor: isLight ? "white" : "#eee",
     });
   };
-
+  useEffect(() => {
+    toggleTheme();
+  }, []);
   return (
     <div className="container">
       <div className="header">

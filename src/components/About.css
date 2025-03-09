@@ -1,4 +1,4 @@
-.container{
+.container {
     width: 100%;
     height: 100vh;
     display: grid;
@@ -21,7 +21,6 @@
     padding: 25px;
     font-family: Arial, sans-serif;
     gap: 20px;
-    overflow: auto;
 }
 
 .disabled {

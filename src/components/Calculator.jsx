@@ -9,6 +9,7 @@ import BMICalculator from "./BMI";
 import { useTheme } from "../ThemeContext";
 import { Link } from "react-router-dom";
 import BMIPopup from "./BMIPopup";
+
 const Calculator = () => {
   const [activeTab, setActiveTab] = useState("default");
   const [value, setValue] = useState("");
@@ -19,6 +20,9 @@ const Calculator = () => {
     setHistory(["No History Available"]);
   };
 
+  useEffect(() => {
+    theme_change(theme);
+  }, []);
   const calculateResult = () => {
     try {
       let expression = value
@@ -56,11 +60,6 @@ const Calculator = () => {
       setValue("Error");
     }
   };
-  useEffect(() => {
-    window.onload = function () {
-      theme_change("light");
-    };
-  }, []);
 
   const handleKeyPress = (event) => {
     const key = event.key;
@@ -163,7 +162,9 @@ const Calculator = () => {
           </div>
           <div className="main-section">
             <div className="display">
-              <h1 className="displayh1">Calculator</h1>
+              <div className="headin">
+                <h1 className="displayh1">Calculator</h1>
+              </div>
               <div className="input-box">
                 <input
                   type="text"
