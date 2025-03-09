@@ -13,16 +13,24 @@ import BMIPopup from "./BMIPopup";
 const Calculator = () => {
   const [activeTab, setActiveTab] = useState("default");
   const [value, setValue] = useState("");
-  const { theme, setTheme } = useTheme();
   const [history, setHistory] = useState(["No History Available"]);
+  const [theme, setTheme] = useState(() => {
+    // Check localStorage for saved theme, default to 'light' if none is found
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme ? savedTheme : "light";
+  });
 
   const clearHistory = () => {
     setHistory(["No History Available"]);
   };
 
   useEffect(() => {
+    // Apply the theme change when the theme state changes
     theme_change(theme);
-  }, []);
+    // Store the theme in localStorage when it changes
+    localStorage.setItem("theme", theme);
+  }, [theme]); // Only run when the theme changes
+
   const calculateResult = () => {
     try {
       let expression = value

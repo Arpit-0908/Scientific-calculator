@@ -3,23 +3,28 @@ import "./About.css";
 import logo from "/nav.png";
 import myImage from "/Photo.png";
 import { Link } from "react-router-dom";
-import { useTheme } from "../ThemeContext";
 import { theme_change } from "./Theme_functions";
 
 const About = () => {
-  const { theme, setTheme } = useTheme();
   const setStyle = (element, styles) => {
     for (const [key, value] of Object.entries(styles)) {
       element.style[key] = value;
     }
   };
 
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "light" : "dark";
-    setTheme(newTheme);
-    theme_change(newTheme);
+  const [theme, setTheme] = useState(() => {
+    // Get theme from localStorage or default to 'light'
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme ? savedTheme : "light";
+  });
 
-    const isLight = newTheme === "light";
+  const toggleTheme = () => {
+    const newTheme = theme === "dark" ? "light" : "dark"; // Toggle theme between 'light' and 'dark'
+    setTheme(newTheme); // Update the state with the new theme
+    localStorage.setItem("theme", newTheme); // Save the new theme to localStorage
+    theme_change(newTheme); // Apply the theme to the page
+
+    const isLight = newTheme === "light"; // Check if the theme is light or dark
     document.querySelectorAll(".about-calculator h2").forEach((el) => {
       setStyle(el, {
         color: isLight ? "blue" : "yellow",
@@ -49,9 +54,12 @@ const About = () => {
       backgroundColor: isLight ? "white" : "#eee",
     });
   };
+
   useEffect(() => {
-    toggleTheme();
-  }, []);
+    // Apply theme on initial render
+    theme_change(theme);
+  }, [theme]); // Effect will run only when 'theme' changes
+
   return (
     <div className="container">
       <div className="header">

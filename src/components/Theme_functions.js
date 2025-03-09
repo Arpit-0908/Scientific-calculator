@@ -1,6 +1,9 @@
 export function theme_change(value) {
   const isLight = value === "dark";
 
+  // Save the theme in localStorage
+  localStorage.setItem("theme", value); // Store the theme in localStorage
+
   document.body.style.backgroundColor = isLight ? "black" : "white";
   document.body.style.color = isLight ? "white" : "black";
   document.body.style.boxShadow = isLight
