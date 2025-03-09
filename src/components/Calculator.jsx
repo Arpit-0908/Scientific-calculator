@@ -301,9 +301,6 @@ const Calculator = () => {
         </div>
       </div>
       <div className="footer">
-        <p className="footer-text">
-          © 2025. All rights reserved | Developer: Arpit Gupta
-        </p>
         <div className="footer-links">
           <a
             href="https://github.com/Arpit-0908"
@@ -322,6 +319,9 @@ const Calculator = () => {
             <i className="fa-brands fa-linkedin"></i> LinkedIn
           </a>
         </div>
+        <p className="footer-text">
+          © 2025. All rights reserved | Developer: Arpit Gupta
+        </p>
       </div>
     </div>
   );
