@@ -8,6 +8,7 @@ import BMICalculator from "./BMI";
 
 import { useTheme } from "../ThemeContext";
 import { Link } from "react-router-dom";
+import BMIPopup from "./BMIPopup";
 const Calculator = () => {
   const [activeTab, setActiveTab] = useState("default");
   const [value, setValue] = useState("");
@@ -307,7 +308,11 @@ const Calculator = () => {
             <TrignoValues />
           </div>
           <div className="BMI">
-            <BMICalculator />
+            <BMIPopup>
+              {(onCalculate, onReset) => (
+                <BMICalculator onCalculate={onCalculate} onReset={onReset} />
+              )}
+            </BMIPopup>
           </div>
         </div>
       </div>

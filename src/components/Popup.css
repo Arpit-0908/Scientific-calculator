@@ -1,0 +1,71 @@
+
+.bmi-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    /* Darker background for better visibility */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bmi-popup-content {
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* Added shadow for depth */
+    width: 260px;
+    /* Fixed width for consistency */
+}
+
+.bmi-popup-content h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+.bmi-popup-content .bmi-message {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.bmi-popup-content button {
+    margin-top: 15px;
+    padding: 8px 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.bmi-popup-content button:hover {
+    background: #0056b3;
+}
+
+/* Styling based on BMI category */
+.bmi-value.underweight {
+    color: #FFA500;
+    /* Orange for underweight */
+}
+
+.bmi-value.normal {
+    color: #28a745;
+    /* Green for normal */
+}
+
+.bmi-value.overweight {
+    color: #FFC107;
+    /* Yellow for overweight */
+}
+
+.bmi-value.obese {
+    color: #DC3545;
+    /* Red for obese */
+    font-weight: bold;
+}

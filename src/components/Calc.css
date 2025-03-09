@@ -425,6 +425,7 @@ body {
     margin-top: -80px;
     margin-left: 0px;
     scale: 0.85;
+    padding-bottom: 20px;
 }
 
 .history-active {
