@@ -291,7 +291,7 @@ const Calculator = () => {
         </p>
         <div className="footer-links">
           <a
-            href="https://github.com/"
+            href="https://github.com/Arpit-0908"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-link"
@@ -299,7 +299,7 @@ const Calculator = () => {
             <i className="fa-brands fa-github"></i> GitHub
           </a>
           <a
-            href="https://linkedin.com/"
+            href="https://www.linkedin.com/in/gupta-arpit0908/"
             target="_blank"
             rel="noopener noreferrer"
             className="footer-link"

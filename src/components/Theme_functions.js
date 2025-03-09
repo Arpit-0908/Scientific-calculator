@@ -1,5 +1,5 @@
 export function theme_change(value) {
-  const isLight = value === "light";
+  const isLight = value === "dark";
 
   document.body.style.backgroundColor = isLight ? "black" : "white";
   document.body.style.color = isLight ? "white" : "black";

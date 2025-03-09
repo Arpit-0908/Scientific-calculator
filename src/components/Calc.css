@@ -392,7 +392,6 @@ body {
 
 .content p {
     color: #ccc;
-    /* Light gray for readability */
     font-size: 14px;
     padding-right: 5px;
     font-weight: 500;
@@ -403,8 +402,8 @@ body {
 .history {
     width: 75%;
     height: 350px;
-    padding: 10px;
-    background: #f9f9f9;
+    padding: 5px;
+    background: #00ee18;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -412,21 +411,27 @@ body {
     margin: 0;
     margin-top: -80px;
     position: relative;
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    /* Equal space distribution */
+    align-items: center;
+    justify-items: center;
     padding-top: 0;
-    scale: .75;
-
+    scale: 0.75;
 }
 
+/* H3 takes first column */
 .history h3 {
     font-size: 22px;
     color: #333;
     border-bottom: 2px solid #007bff;
-    display: inline-block;
-    margin-bottom: 0;
-    padding: 0;
+    width: 100%;
     padding-bottom: 10px;
+    text-align: center;
+    background-color: red;
 }
 
+/* UL takes second column */
 .history ul {
     list-style: none;
     padding: 0;
@@ -436,8 +441,10 @@ body {
     background: white;
     border-radius: 5px;
     box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
+/* List items inside UL */
 .history li {
     font-size: 14px;
     padding: 8px;
@@ -447,15 +454,13 @@ body {
     color: #333;
 }
 
+/* Button in third column */
 .history button {
-    margin-top: 10px;
     padding: 8px 15px;
-    font-size: 14px;
+    font-size: 18px;
     background: #dc3545;
     color: white;
-    position: absolute;
-    bottom: 10px;
-    right: 110px;
+    width: 50%;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -466,9 +471,9 @@ body {
     background: #c82333;
 }
 
+
 .footer {
     background: linear-gradient(135deg, #2c3e50, #34495e);
-    /* Dark gradient */
     display: flex;
     flex-direction: column;
     align-items: center;

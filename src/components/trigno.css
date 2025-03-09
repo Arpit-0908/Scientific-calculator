@@ -21,8 +21,8 @@ h2 {
 .button-group {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 19px;
+    margin-bottom: 15px;
 }
 
 .button-group button {
@@ -32,7 +32,7 @@ h2 {
     background-color: #007bff;
     color: white;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 15px;
     transition: background 0.3s ease;
 }
 
@@ -41,7 +41,7 @@ h2 {
 }
 
 .trig-info {
-    background: white;
+    background: #ccc;
     padding: 5px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -49,18 +49,19 @@ h2 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding-top: 0;
 }
 
 .trig-info h3 {
     font-size: 22px;
     color: #333;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
 
 .trig-info ul {
     list-style-type: none;
     padding: 0;
-    width: 80%;
+    width: 75%;
 }
 
 .trig-info li {
@@ -75,7 +76,8 @@ h2 {
 }
 
 .trig-info li:nth-child(odd) {
-    background-color: #ccc;
+    background-color: #333;
+    color: white;
 }
 
 .trig-info li:nth-child(even) {
