@@ -38,20 +38,18 @@ export function theme_change(value) {
     })
   );
 
-  document
-    .querySelectorAll(".btn-clear")
-    .forEach((el) =>
-      setStyle(el, {
-        backgroundColor: isLight ? "rgb(200, 0, 0)" : "rgb(255,100,100)",
-      })
-    );
+  document.querySelectorAll(".btn-clear").forEach((el) =>
+    setStyle(el, {
+      backgroundColor: isLight ? "rgb(200, 0, 0)" : "rgb(255,100,100)",
+    })
+  );
 
   setStyle(document.querySelector(".btneq"), {
     backgroundColor: isLight ? "green" : "rgb(0, 255, 119)",
   });
 
   setStyle(document.querySelector("#root"), {
-    backgroundColor: isLight ? "black" : "rgb(243, 158, 54)",
+    backgroundColor: isLight ? "black" : "rgb(165, 239, 54)",
   });
 
   setStyle(document.querySelector("h1"), {
@@ -97,5 +95,5 @@ export function theme_change(value) {
   });
   setStyle(document.querySelector(".trig-info"), {
     color: isLight ? "red" : "blue",
-    });
+  });
 }

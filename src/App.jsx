@@ -1,15 +1,16 @@
-import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Calculator from "./components/Calculator";
+import About from "./components/About";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      
-      <Calculator/>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Calculator />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   );
 }
 

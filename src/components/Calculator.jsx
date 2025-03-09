@@ -4,6 +4,8 @@ import { theme_change } from "./Theme_functions";
 import Scientific from "./Scientific";
 import logo from "/nav.png";
 import TrignoValues from "./Trigno-values";
+import BMICalculator from "./BMI";
+import { Link } from "react-router-dom";
 const Calculator = () => {
   const [activeTab, setActiveTab] = useState("default");
   const [value, setValue] = useState("");
@@ -108,7 +110,11 @@ const Calculator = () => {
         <div className="tabs">
           <ul>
             <li className="nav">Home</li>
-            <li className="nav ">About</li>
+            <Link to="/About">
+              <li className="nav ">
+                <b>About</b>
+              </li>
+            </Link>
             <li className="nav" onClick={() => setActiveTab("default")}>
               Basic Calc
             </li>
@@ -298,27 +304,12 @@ const Calculator = () => {
           <div className="trigno-fxn">
             <TrignoValues />
           </div>
+          <div className="BMI">
+            <BMICalculator />
+          </div>
         </div>
       </div>
       <div className="footer">
-        <div className="footer-links">
-          <a
-            href="https://github.com/Arpit-0908"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-link"
-          >
-            <i className="fa-brands fa-github"></i> GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/gupta-arpit0908/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="footer-link"
-          >
-            <i className="fa-brands fa-linkedin"></i> LinkedIn
-          </a>
-        </div>
         <p className="footer-text">
           © 2025. All rights reserved | Developer: Arpit Gupta
         </p>
