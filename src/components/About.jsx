@@ -15,7 +15,7 @@ const About = () => {
   };
 
   const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
+    const newTheme = theme === "light" ? "light" : "dark";
     setTheme(newTheme);
     theme_change(newTheme);
 
